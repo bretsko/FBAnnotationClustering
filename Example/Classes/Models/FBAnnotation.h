@@ -18,6 +18,6 @@ NS_ENUM(NSUInteger, AnnotationType){typeA, typeB, typeC, typeD, typeE};
 @property(nonatomic, copy) NSString *subtitle;
 
 @property(nonatomic, assign) NSInteger idPlace;
-@property(nonatomic, assign) enum AnnotationType annotationType;
+@property(nonatomic, assign) enum AnnotationType type;
 
 @end

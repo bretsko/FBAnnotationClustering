@@ -124,11 +124,15 @@
 - (NSMutableArray *)randomLocationsWithCount:(NSUInteger)count {
   NSMutableArray *array = [NSMutableArray array];
   for (int i = 0; i < count; i++) {
-    FBAnnotation *a = [[FBAnnotation alloc] init];
-    a.coordinate =
+      int c = i;
+      if (i > 4) {
+      c = i%4;
+      }
+    FBAnnotation *annotation = [FBAnnotation new];
+      annotation.type = c;
+    annotation.coordinate =
         CLLocationCoordinate2DMake(drand48() * 40 - 20, drand48() * 80 - 40);
-
-    [array addObject:a];
+    [array addObject:annotation];
   }
   return array;
 }
@@ -262,238 +266,86 @@
 
   return annotationView;
 
-  //    static NSString *identifier = @"Annotation";
-  //    MKPinAnnotationView *pin = (MKPinAnnotationView *)
-  //    [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-  //    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-  //
-  //        NSString *identifier = @"UserAnnotation";
-  //
-  //        MKAnnotationView *pin = (MKAnnotationView *)
-  //        [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-  //        if (!pin) {
-  //
-  //            pin = [[MKAnnotationView alloc] initWithAnnotation:annotation
-  //                                               reuseIdentifier:identifier];
-  //
-  //            pin.canShowCallout = YES;
-  //            pin.image = [UIImage imageNamed:@"UserArrow"];
-  //        } else {
-  //            pin.annotation = annotation;
-  //        }
-  //
-  //        self.userLocationPin = pin;
-  //        return pin;
-  //    } else if ([annotation isMemberOfClass:[FBAnnotationCluster class]]) {
-  //        FBAnnotationCluster *clusterAnnotation = annotation;
-  //        if (clusterAnnotation.animated) {
-  //            FBAnnotationClusterView *clusterAnnotationView =
-  //            [[FBAnnotationClusterView alloc]
-  //             initWithAnnotation:clusterAnnotation
-  //             clusteringManager:_clusteringManager];
-  //            return clusterAnnotationView;
-  //        } else {
-  //
-  //            FBAnnotationClusterView *clusterAnnotationView =
-  //            [[FBAnnotationClusterView alloc]
-  //             initWithAnnotation:clusterAnnotation
-  //             clusteringManager:_clusteringManager];
-  //            return clusterAnnotationView;
-  //        }
-  //    } else {
-  //        if (!pin) {
-  //            pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-  //                                                  reuseIdentifier:identifier];
-  //        }
-  //
-  //        switch (((HMMapAnnotation *)annotation).ratingForColor) {
-  //
-  //            case noRating: {
-  //                pin.pinTintColor = [UIColor darkGrayColor];
-  //                break;
-  //            }
-  //            case badRating: {
-  //                pin.pinTintColor = [UIColor redColor];
-  //                break;
-  //            }
-  //            case normalRating: {
-  //                pin.pinTintColor = [UIColor colorWithRed:(252 / 255.0)
-  //                                                   green:(190 / 255.0)
-  //                                                    blue:(78 / 255.0)
-  //                                                   alpha:1];
-  //                break;
-  //            }
-  //            case goodRating: {
-  //                pin.pinTintColor = [UIColor colorWithRed:(200 / 255.0)
-  //                                                   green:(233 / 255.0)
-  //                                                    blue:(100 / 255.0)
-  //                                                   alpha:1];
-  //                break;
-  //            }
-  //            case veryGoodRating: {
-  //                pin.pinTintColor = [UIColor colorWithRed:(140 / 255.0)
-  //                                                   green:(180 / 255.0)
-  //                                                    blue:(110 / 255.0)
-  //                                                   alpha:1];
-  //                break;
-  //            }
-  //        }
-  //        pin.animatesDrop = NO;
-  //
-  //        return pin;
-  //    }
+//      static NSString *identifier = @"Annotation";
+//      MKPinAnnotationView *pin = (MKPinAnnotationView *)
+//      [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+//      if ([annotation isKindOfClass:[MKUserLocation class]]) {
+//  
+//          NSString *identifier = @"UserAnnotation";
+//  
+//          MKAnnotationView *pin = (MKAnnotationView *)
+//          [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+//          if (!pin) {
+//  
+//              pin = [[MKAnnotationView alloc] initWithAnnotation:annotation
+//                                                 reuseIdentifier:identifier];
+//  
+//              pin.canShowCallout = YES;
+//          } else {
+//              pin.annotation = annotation;
+//          }
+//  
+//          self.userLocationPin = pin;
+//          return pin;
+//      } else if ([annotation isMemberOfClass:[FBAnnotationCluster class]]) {
+//          FBAnnotationCluster *clusterAnnotation = annotation;
+//          if (clusterAnnotation.animated) {
+//              FBAnnotationClusterView *clusterAnnotationView =
+//              [[FBAnnotationClusterView alloc]
+//               initWithAnnotation:clusterAnnotation
+//               clusteringManager:_clusteringManager];
+//              return clusterAnnotationView;
+//          } else {
+//  
+//              FBAnnotationClusterView *clusterAnnotationView =
+//              [[FBAnnotationClusterView alloc]
+//               initWithAnnotation:clusterAnnotation
+//               clusteringManager:_clusteringManager];
+//              return clusterAnnotationView;
+//          }
+//      } else {
+//          if (!pin) {
+//              pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+//                                                    reuseIdentifier:identifier];
+//          }
+//          FBAnnotation* fbannotation = (FBAnnotation *)annotation;
+//          switch (fbannotation.type) {
+//              case typeA: {
+//                  pin.pinTintColor = [UIColor darkGrayColor];
+//
+//                 break;
+//              }
+//              case typeB: {
+//                    pin.pinTintColor = [UIColor redColor];
+//                 break;
+//              }
+//              case typeC: {
+//                  pin.pinTintColor = [UIColor colorWithRed:(252 / 255.0)
+//                                                     green:(190 / 255.0)
+//                                                      blue:(78 / 255.0)
+//                                                     alpha:1];
+//                 break;
+//              }
+//              case typeD: {
+//                  pin.pinTintColor = [UIColor colorWithRed:(200 / 255.0)
+//                                                     green:(233 / 255.0)
+//                                                      blue:(100 / 255.0)
+//                                                     alpha:1];
+//                  break;
+//              }
+//              case typeE: {
+//                  pin.pinTintColor = [UIColor colorWithRed:(140 / 255.0)
+//                                                     green:(180 / 255.0)
+//                                                      blue:(110 / 255.0)
+//                                                     alpha:1];
+//                  break;
+//              }
+//          }
+//          pin.animatesDrop = NO;
+//  
+//          return pin;
+//      }
 }
 
-- (void)mapView:(MKMapView *)mapView
-didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(10_9, 4_0) {
-
-    self.aciveAnnotationView = view;
-
-    if (![view isMemberOfClass:[FBAnnotationClusterView class]]) {
-
-        self.annotationView = view;
-
-        //        self.downToolBar.hidden = YES;
-        //        NSString *stringId = [NSString
-        //                              stringWithFormat:@"%ld",
-        //                              (long)((FBAnnotation
-        //                              *)view.annotation).idPlace];
-        //
-        //        self.placeArray =
-        //        [[HMCoreDataManager sharedManager] getPlaceWithStringId:stringId];
-        //
-        //        Place *place = [self.placeArray firstObject];
-        //        User *user = place.user;
-        //
-        //
-        //        self.weatherDict = [[NSDictionary alloc] init];
-        //        [[HMWeatherManager sharedManager] getWeatherByCoordinate:place
-        //        onSuccess:^(NSDictionary *weather) {
-        //
-        //            self.weatherDict = weather;
-        //        } onFailure:^(NSError *error, NSInteger statusCode) {
-        //
-        //            NSLog(@"%@%ld",error,(long)statusCode);
-        //        }];
-        //
-        //        self.autorDescriptionLable.text = user.name;
-        //
-        //        Description *desc = place.descript;
-        //
-        //        self.descriptionTextView.text = desc.descriptionString;
-        //        Waiting *waiting = place.waiting;
-        //        self.waitingTimeLable.text = [NSString
-        //                                      stringWithFormat:NSLocalizedString(@"Average
-        //                                      waiting time: %@", nil),
-        //                                      waiting.avg_textual];
-        //        [self.descriptionTextView
-        //         resizeHeightToFitForLabel:self.descriptionTextView];
-        //
-        //        self.constraitToShowUpToolBar.constant =
-        //        self.waitingTimeLable.frame.size.height +
-        //        self.descriptionTextView.frame.size.height + 60.f;
-        //
-        //        [self.viewToAnimate setNeedsUpdateConstraints];
-        //
-        //        [UIView animateWithDuration:1.f
-        //                         animations:^{
-        //                             [self.viewToAnimate layoutIfNeeded];
-        //                         }];
-    }
-}
-
-- (void)mapView:(MKMapView *)mapView
-didDeselectAnnotationView:(MKAnnotationView *)view {
-
-    if (![view isMemberOfClass:[FBAnnotationClusterView class]]) {
-        //        self.downToolBar.hidden = NO;
-        //        self.constraitToShowUpToolBar.constant = 0.f;
-        //        [self.viewToAnimate setNeedsUpdateConstraints];
-        
-        //        [UIView animateWithDuration:1.f
-        //                         animations:^{
-        //                             [self.viewToAnimate layoutIfNeeded];
-        //                         }];
-    }
-}
-
-- (void)printPointWithContinent {
-
-  //    NSInteger minForPoint = 0;
-  //    NSInteger maxForPoint = 5;
-  //
-  //    switch (self.ratingOfPoints) {
-  //        case 0: {
-  //            minForPoint = 0;
-  //            maxForPoint = 5;
-  //            break;
-  //        }
-  //        case 1: {
-  //            minForPoint = 5;
-  //            maxForPoint = 5;
-  //            break;
-  //        }
-  //        case 2: {
-  //            minForPoint = 1;
-  //            maxForPoint = 4;
-  //            break;
-  //        }
-  //        default:
-  //            break;
-  //    }
-  //
-  //    NSString *startRating =
-  //    [NSString stringWithFormat:@" %ld", (long)maxForPoint];
-  //    NSString *endRating = [NSString stringWithFormat:@" %ld",
-  //    (long)minForPoint];
-
-  //    if (!self.pointHasComments || !self.pointHasDescription) {
-  //
-  //        self.mapPointArray =
-  //        [[HMCoreDataManager sharedManager]
-  //        getPlaceWithStartRating:startRating
-  //                                                         endRating:endRating];
-  //    } else {
-  //
-  //        self.mapPointArray = [[HMCoreDataManager sharedManager]
-  //                              getPlaceWithCommentsStartRating:startRating
-  //                              endRating:endRating];
-  //    }
-
-  //    NSLog(@"MAP annotation array count %lu",
-  //          (unsigned long)self.mapPointArray.count);
-  //    _clusteredAnnotations = [NSMutableArray new];
-  //    for (Place *place in self.mapPointArray) {
-  //        FBAnnotation *annotation = [[FBAnnotation alloc] init];
-  //        CLLocationCoordinate2D coordinate;
-  //       // coordinate.latitude = [place.lat doubleValue];
-  //       // coordinate.longitude = [place.lon doubleValue];
-  //
-  //        if ([place.rating intValue] == 0) {
-  //            annotation.annotationType = typeA;
-  //        } else if ([place.rating intValue] == 5) {
-  //            annotation.annotationType = typeB;
-  //        } else if ([place.rating intValue] == 4) {
-  //            annotation.annotationType = typeC;
-  //        } else if ([place.rating intValue] == 3) {
-  //            annotation.annotationType = typeD;
-  //        } else if (([place.rating intValue] >= 1) &&
-  //                   ([place.rating intValue] <= 2)) {
-  //            annotation.annotationType = typeE;
-  //        }
-  //        annotation.coordinate = coordinate;
-  //        annotation.title = [NSString stringWithFormat:@"Rating = %@",
-  //        place.rating];
-  //
-  //        annotation.subtitle = [NSString
-  //                               stringWithFormat:@"%.5g, %.5g",
-  //                               annotation.coordinate.latitude,
-  //                               annotation.coordinate.longitude];
-  //        annotation.idPlace = [place.id integerValue];
-  //
-  //        [_clusteredAnnotations addObject:annotation];
-  //        [self.mapView addAnnotation:annotation];
-  //    }
-}
 
 @end
