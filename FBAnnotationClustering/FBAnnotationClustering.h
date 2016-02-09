@@ -6,11 +6,12 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-#ifndef _FBANNOTATIONCLUSTERING_
-    #define _FBANNOTATIONCLUSTERING_
+//#ifndef _FBANNOTATIONCLUSTERING_
+//#define _FBANNOTATIONCLUSTERING_
 
-    #import "FBClusteringManager.h"
-    #import "FBAnnotationCluster.h"
-#endif /* _FBANNOTATIONCLUSTERING_ */
+#import "FBAnnotationCluster.h"
+#import "FBAnnotationClusterView.h"
+#import "FBClusteringManager.h"
+//#endif /* _FBANNOTATIONCLUSTERING_ */

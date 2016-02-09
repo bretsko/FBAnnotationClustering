@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 Infinum Ltd. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <FBAnnotationClustering/FBAnnotationClustering.h>
+@import UIKit;
+#import <FBAnnotationClustering.h>
 
-@interface FBViewController : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate>
+@interface FBViewController
+    : UIViewController <MKMapViewDelegate, FBClusteringManagerDelegate>
 
 @end

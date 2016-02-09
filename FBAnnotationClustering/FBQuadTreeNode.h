@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Infinum Ltd. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+@import Foundation;
+@import MapKit;
 
 #define kNodeCapacity 8
 
 typedef struct {
-    CGFloat x0;
-    CGFloat y0;
-    CGFloat xf;
-    CGFloat yf;
+  CGFloat x0;
+  CGFloat y0;
+  CGFloat xf;
+  CGFloat yf;
 } FBBoundingBox;
 
 FBBoundingBox FBBoundingBoxMake(CGFloat x0, CGFloat y0, CGFloat xf, CGFloat yf);
@@ -23,25 +23,24 @@ FBBoundingBox FBBoundingBoxMake(CGFloat x0, CGFloat y0, CGFloat xf, CGFloat yf);
 FBBoundingBox FBBoundingBoxForMapRect(MKMapRect mapRect);
 MKMapRect FBMapRectForBoundingBox(FBBoundingBox boundingBox);
 
-BOOL FBBoundingBoxContainsCoordinate(FBBoundingBox box, CLLocationCoordinate2D coordinate);
+BOOL FBBoundingBoxContainsCoordinate(FBBoundingBox box,
+                                     CLLocationCoordinate2D coordinate);
 BOOL FBBoundingBoxIntersectsBoundingBox(FBBoundingBox box1, FBBoundingBox box2);
-
 
 /**
  Quad Tree Node. You should never use this class.
  */
 @interface FBQuadTreeNode : NSObject
 
-@property (nonatomic, assign) NSUInteger count;
-@property (nonatomic, assign) FBBoundingBox boundingBox;
+@property(nonatomic, assign) NSUInteger count;
+@property(nonatomic, assign) FBBoundingBox boundingBox;
 
-@property (nonatomic, strong) NSMutableArray *annotations;
+@property(nonatomic, strong) NSMutableArray *annotations;
 
-@property (nonatomic, strong) FBQuadTreeNode *northEast;
-@property (nonatomic, strong) FBQuadTreeNode *northWest;
-@property (nonatomic, strong) FBQuadTreeNode *southEast;
-@property (nonatomic, strong) FBQuadTreeNode *southWest;
-
+@property(nonatomic, strong) FBQuadTreeNode *northEast;
+@property(nonatomic, strong) FBQuadTreeNode *northWest;
+@property(nonatomic, strong) FBQuadTreeNode *southEast;
+@property(nonatomic, strong) FBQuadTreeNode *southWest;
 
 /**
  Custom init method.

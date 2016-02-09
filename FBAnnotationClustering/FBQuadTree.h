@@ -5,8 +5,7 @@
 //  Created by Filip Bec on 05/01/14.
 //  Copyright (c) 2014 Infinum Ltd. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "FBQuadTreeNode.h"
 
 /**
@@ -15,8 +14,7 @@
 @interface FBQuadTree : NSObject
 
 /// Root node.
-@property (nonatomic, strong) FBQuadTreeNode *rootNode;
-
+@property(nonatomic, strong) FBQuadTreeNode *rootNode;
 
 /**
  Insert new annotation in tree.
@@ -31,8 +29,8 @@
 /**
  Enumerate annotations in @c box.
  */
-- (void)enumerateAnnotationsInBox:(FBBoundingBox)box usingBlock:(void (^)(id<MKAnnotation> obj))block;
-
+- (void)enumerateAnnotationsInBox:(FBBoundingBox)box
+                       usingBlock:(void (^)(id<MKAnnotation> obj))block;
 
 /**
  Enumerate all annotations.

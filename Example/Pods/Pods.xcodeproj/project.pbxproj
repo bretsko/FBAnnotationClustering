@@ -15,6 +15,10 @@
 		6413CDC32F01E1F63E6AD825 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE902CCBD73FB7E4B787DBAE /* MapKit.framework */; };
 		6E348167BE41ACB4E22CEB92 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D2468806BBCF27C2568BA /* Pods-dummy.m */; };
 		83C8E264AE73C0EF54A8E85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */; };
+		847237001C6A5C1D00743B4E /* FBPieSliceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 847236F91C6A531000743B4E /* FBPieSliceLayer.m */; };
+		847237011C6A5C1D00743B4E /* FBAnnotationClusterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847236F61C6A528800743B4E /* FBAnnotationClusterView.m */; };
+		847237021C6A5C2C00743B4E /* FBPieSliceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 847236FA1C6A531000743B4E /* FBPieSliceLayer.h */; };
+		847237031C6A5C2C00743B4E /* FBAnnotationClusterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 847236F71C6A528800743B4E /* FBAnnotationClusterView.h */; };
 		971732DFA55044200E897E38 /* Pods-FBAnnotationClustering-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C281F7F10CDEB5AADDD703AD /* Pods-FBAnnotationClustering-dummy.m */; };
 		B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */; };
 		BE1A6F2FF38010DFD82F9120 /* FBClusteringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */; };
@@ -45,6 +49,10 @@
 		68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClustering-Private.xcconfig"; sourceTree = "<group>"; };
 		71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
 		8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBClusteringManager.m; sourceTree = "<group>"; };
+		847236F61C6A528800743B4E /* FBAnnotationClusterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationClusterView.m; sourceTree = "<group>"; };
+		847236F71C6A528800743B4E /* FBAnnotationClusterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClusterView.h; sourceTree = "<group>"; };
+		847236F91C6A531000743B4E /* FBPieSliceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBPieSliceLayer.m; sourceTree = "<group>"; };
+		847236FA1C6A531000743B4E /* FBPieSliceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBPieSliceLayer.h; sourceTree = "<group>"; };
 		85856AC116E120434E928E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		89E6BED1730D9A6A051DC7C3 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
 		940D4CA0C8962D6E3E428650 /* FBQuadTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
@@ -159,15 +167,19 @@
 		AD00C45F9C301B6AFBCA5CBC /* FBAnnotationClustering */ = {
 			isa = PBXGroup;
 			children = (
+				28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */,
 				D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */,
 				D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */,
-				28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */,
+				847236F71C6A528800743B4E /* FBAnnotationClusterView.h */,
+				847236F61C6A528800743B4E /* FBAnnotationClusterView.m */,
 				CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */,
 				8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */,
 				FD66FE75C103B042C69B25C5 /* FBQuadTree.h */,
 				940D4CA0C8962D6E3E428650 /* FBQuadTree.m */,
 				3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */,
 				71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */,
+				847236FA1C6A531000743B4E /* FBPieSliceLayer.h */,
+				847236F91C6A531000743B4E /* FBPieSliceLayer.m */,
 			);
 			path = FBAnnotationClustering;
 			sourceTree = "<group>";
@@ -199,11 +211,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */,
 				47BD55B975CAFF97A70BE51F /* FBAnnotationClustering.h in Headers */,
+				847237031C6A5C2C00743B4E /* FBAnnotationClusterView.h in Headers */,
+				1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */,
 				B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */,
 				C314623E58DEE8CBE26B7337 /* FBQuadTree.h in Headers */,
 				5FDE8333E8C10B25209A11D8 /* FBQuadTreeNode.h in Headers */,
+				847237021C6A5C2C00743B4E /* FBPieSliceLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +264,7 @@
 		994E7505722C01E294FB84AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 			};
 			buildConfigurationList = B7AB3459B1C5EBB044F44CC5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -275,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847237001C6A5C1D00743B4E /* FBPieSliceLayer.m in Sources */,
+				847237011C6A5C1D00743B4E /* FBAnnotationClusterView.m in Sources */,
 				230111A9AC22CD3C7169D183 /* FBAnnotationCluster.m in Sources */,
 				BE1A6F2FF38010DFD82F9120 /* FBClusteringManager.m in Sources */,
 				C8A58CB4C4D052E5C9EC745F /* FBQuadTree.m in Sources */,
@@ -346,7 +362,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
@@ -419,6 +436,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -433,8 +451,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
