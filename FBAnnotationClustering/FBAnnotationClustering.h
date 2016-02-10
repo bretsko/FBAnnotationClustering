@@ -10,7 +10,7 @@
 
 //#ifndef _FBANNOTATIONCLUSTERING_
 //#define _FBANNOTATIONCLUSTERING_
-
+#import "FBPointAnnotation.h"
 #import "FBAnnotationCluster.h"
 #import "FBAnnotationClusterView.h"
 #import "FBClusteringManager.h"

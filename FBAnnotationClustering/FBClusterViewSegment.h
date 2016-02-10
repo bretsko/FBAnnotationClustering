@@ -8,7 +8,7 @@
 @import UIKit;
 @import QuartzCore;
 
-@interface FBPieSliceLayer : CALayer
+@interface FBClusterViewSegment : CALayer
 
 @property(nonatomic, assign) CGFloat startAngle;
 @property(nonatomic, assign) CGFloat endAngle;

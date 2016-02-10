@@ -8,6 +8,7 @@
 
 @import Foundation;
 @import MapKit;
+#import "FBPointAnnotation.h"
 
 /**
  Class that is used to display annotation clusters.
@@ -25,6 +26,8 @@
 
 /// Array of the annotations that are represented with this cluster.
 @property(nonatomic, strong) NSArray *annotations;
+
+@property(nonatomic, assign) enum AnnotationType type;
 
 @property(nonatomic, assign) BOOL animated;
 

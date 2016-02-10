@@ -7,15 +7,15 @@
 //
 
 #import "FBClusteringManager.h"
-#import "FBPieSliceLayer.h"
+#import "FBClusterViewSegment.h"
+#import "FBPointAnnotation.h"
 #import "FBQuadTree.h"
 
 static NSString *const kFBClusteringManagerLockName =
     @"co.infinum.clusteringLock";
-// static NSString* kSettingsComments = @"comments";
 static NSString *kSettingsRating = @"type";
 static NSString *kSettingsClustering = @"clustering";
-
+static NSUInteger clusteringFactor = 15;
 #pragma mark - Utility functions
 
 NSInteger FBZoomScaleToZoomLevel(MKZoomScale scale) {
@@ -68,9 +68,9 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 
     self.scale = [[NSNumber alloc] initWithDouble:1];
 
-    _clusteringFactor = 15;
-    _labelFontSize = _clusteringFactor * 1.3;
-    _clusterAnnotationViewRadius = _clusteringFactor * 3;
+    //clusteringFactor = 15;
+    _labelFontSize = clusteringFactor * 1.3;
+    _clusterAnnotationViewRadius = clusteringFactor * 3;
 
     _numOfInitializedAnnotationViews = 0;
     _slicesArray = [NSMutableArray new];
@@ -95,6 +95,14 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
     [self addAnnotations:annotations];
   }
   return self;
+}
+
+- (NSUInteger) clusteringFactor{
+    return clusteringFactor;
+}
+
+- (void) setClusteringFactor:(NSUInteger)newFactor{
+    clusteringFactor = newFactor;
 }
 
 - (void)setAnnotations:(NSArray *)annotations {
@@ -129,22 +137,22 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 - (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect
                                  withZoomScale:(double)zoomScale {
 
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  switch ([userDefaults integerForKey:kSettingsClustering]) {
-  case 0: {
-    _clusteringFactor = 5;
-  } break;
-  case 1: {
-    _clusteringFactor = 10;
-  } break;
-  case 2: {
-    _clusteringFactor = 25;
-  } break;
-
-  default:
-    _clusteringFactor = 15;
-    break;
-  }
+//  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//  switch ([userDefaults integerForKey:kSettingsClustering]) {
+//  case 0: {
+//    _clusteringFactor = 5;
+//  } break;
+//  case 1: {
+//    _clusteringFactor = 10;
+//  } break;
+//  case 2: {
+//    _clusteringFactor = 25;
+//  } break;
+//
+//  default:
+//    _clusteringFactor = 15;
+//    break;
+//  }
 
   return [self clusteredAnnotationsWithinMapRect:rect
                                    withZoomScale:zoomScale
@@ -196,11 +204,11 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 
       NSInteger count = [annotations count];
 
-      if (count < _clusteringFactor) {
+      if (count < clusteringFactor) {
         [clusteredAnnotations addObjectsFromArray:annotations];
       }
 
-      if (count > _clusteringFactor - 1) {
+      if (count > clusteringFactor - 1) {
 
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(
             totalLatitude / count, totalLongitude / count);
@@ -260,7 +268,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 }
 
 - (void)firePieChartAnimation {
-  for (FBPieSliceLayer *slice in self.slicesArray) {
+  for (FBClusterViewSegment *slice in self.slicesArray) {
     slice.startAngle = slice.startAngleAnimated;
     slice.endAngle = slice.endAngleAnimated;
   }

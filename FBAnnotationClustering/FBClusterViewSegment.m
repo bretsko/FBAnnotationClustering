@@ -7,9 +7,9 @@
 //
 
 #import "FBClusteringManager.h"
-#import "FBPieSliceLayer.h"
+#import "FBClusterViewSegment.h"
 
-@implementation FBPieSliceLayer
+@implementation FBClusterViewSegment
 
 @dynamic startAngle, endAngle;
 
@@ -32,8 +32,8 @@
 - (id)initWithLayer:(id)layer {
 
   if (self = [super initWithLayer:layer]) {
-    if ([layer isKindOfClass:[FBPieSliceLayer class]]) {
-      FBPieSliceLayer *other = (FBPieSliceLayer *)layer;
+    if ([layer isKindOfClass:[FBClusterViewSegment class]]) {
+      FBClusterViewSegment *other = (FBClusterViewSegment *)layer;
       self.startAngle = other.startAngle;
       self.endAngle = other.endAngle;
       self.fillColor = other.fillColor;

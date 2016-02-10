@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,14 +20,12 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K86-hM-ZLJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="5Rf-Df-6Fy"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-Tt-diF">
-                                <rect key="frame" x="104" y="518" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="104" y="518" width="112" height="30"/>
                                 <state key="normal" title="Add annotations">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -36,22 +35,32 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ed-bg-etR">
                                 <rect key="frame" x="139" y="487" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Kd-YyY">
+                                <rect key="frame" x="202" y="28" width="100" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="qbh-Wv-VMm"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="ClusterScalingSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="8nL-EG-TKc"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K86-hM-ZLJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Dqg-LF-u5l"/>
-                            <constraint firstItem="K86-hM-ZLJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GLm-TM-6a7"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6Lp-Tt-diF" secondAttribute="bottom" constant="20" id="Osd-YW-8HX"/>
-                            <constraint firstAttribute="centerX" secondItem="6Lp-Tt-diF" secondAttribute="centerX" id="Qmm-Ld-JsO"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="K86-hM-ZLJ" secondAttribute="bottom" id="YPy-hc-STM"/>
-                            <constraint firstAttribute="trailing" secondItem="K86-hM-ZLJ" secondAttribute="trailing" id="hya-xh-dHi"/>
-                            <constraint firstAttribute="centerX" secondItem="7Ed-bg-etR" secondAttribute="centerX" id="pSl-1R-ufy"/>
-                            <constraint firstItem="6Lp-Tt-diF" firstAttribute="top" secondItem="7Ed-bg-etR" secondAttribute="bottom" constant="10" id="wDy-WO-v8f"/>
+                            <constraint firstItem="7Ed-bg-etR" firstAttribute="centerX" secondItem="6Lp-Tt-diF" secondAttribute="centerX" id="4Ln-BP-IrL"/>
+                            <constraint firstItem="K86-hM-ZLJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CXS-ww-1cn"/>
+                            <constraint firstItem="MKf-Kd-YyY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="EMR-Wm-y88"/>
+                            <constraint firstItem="6Lp-Tt-diF" firstAttribute="top" secondItem="7Ed-bg-etR" secondAttribute="bottom" constant="10" id="G2w-6R-JIF"/>
+                            <constraint firstItem="K86-hM-ZLJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GmL-R7-4yd"/>
+                            <constraint firstAttribute="trailing" secondItem="K86-hM-ZLJ" secondAttribute="trailing" id="McV-Ix-ZPY"/>
+                            <constraint firstItem="K86-hM-ZLJ" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Q9k-6N-JNk"/>
+                            <constraint firstAttribute="bottom" secondItem="6Lp-Tt-diF" secondAttribute="bottom" constant="20" symbolic="YES" id="eYj-o3-R6p"/>
+                            <constraint firstItem="6Lp-Tt-diF" firstAttribute="centerX" secondItem="K86-hM-ZLJ" secondAttribute="centerX" id="rbM-wK-rp3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MKf-Kd-YyY" secondAttribute="trailing" constant="6" id="u3r-FY-O9h"/>
                         </constraints>
                     </view>
                     <connections>
@@ -63,9 +72,4 @@
             </objects>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

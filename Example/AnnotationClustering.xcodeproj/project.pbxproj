@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84713F361C6ADAB500D020AC /* FBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84713F321C6ADAB500D020AC /* FBViewController.m */; };
+		84713F371C6ADAB500D020AC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84713F341C6ADAB500D020AC /* FBAppDelegate.m */; };
 		8A86F1B196A24278AA00E45F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F00D94D0560465788605775 /* libPods.a */; };
 		DC505A8518F0B505008229F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505A8418F0B505008229F7 /* Foundation.framework */; };
 		DC505A8718F0B505008229F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505A8618F0B505008229F7 /* CoreGraphics.framework */; };
@@ -21,9 +23,6 @@
 		DC505AA918F0B505008229F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505A8818F0B505008229F7 /* UIKit.framework */; };
 		DC505AB118F0B505008229F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC505AAF18F0B505008229F7 /* InfoPlist.strings */; };
 		DC505AB318F0B505008229F7 /* AnnotationClusteringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC505AB218F0B505008229F7 /* AnnotationClusteringTests.m */; };
-		DC505AC318F0B9C7008229F7 /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC505ABF18F0B9C7008229F7 /* FBAppDelegate.m */; };
-		DC505AC418F0B9C7008229F7 /* FBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC505AC218F0B9C7008229F7 /* FBViewController.m */; };
-		DC505AC818F0BA9E008229F7 /* FBAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC505AC718F0BA9E008229F7 /* FBAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +38,10 @@
 /* Begin PBXFileReference section */
 		07747994D3D1DB6F5D31E65D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3F00D94D0560465788605775 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84713F321C6ADAB500D020AC /* FBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBViewController.m; sourceTree = "<group>"; };
+		84713F331C6ADAB500D020AC /* FBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBViewController.h; sourceTree = "<group>"; };
+		84713F341C6ADAB500D020AC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
+		84713F351C6ADAB500D020AC /* FBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAppDelegate.h; sourceTree = "<group>"; };
 		AD84D55ACD714A4191C3DDAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DC505A8118F0B505008229F7 /* AnnotationClustering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnnotationClustering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC505A8418F0B505008229F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,12 +59,6 @@
 		DC505AAE18F0B505008229F7 /* AnnotationClusteringTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnnotationClusteringTests-Info.plist"; sourceTree = "<group>"; };
 		DC505AB018F0B505008229F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC505AB218F0B505008229F7 /* AnnotationClusteringTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationClusteringTests.m; sourceTree = "<group>"; };
-		DC505ABE18F0B9C7008229F7 /* FBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAppDelegate.h; sourceTree = "<group>"; };
-		DC505ABF18F0B9C7008229F7 /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
-		DC505AC118F0B9C7008229F7 /* FBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBViewController.h; sourceTree = "<group>"; };
-		DC505AC218F0B9C7008229F7 /* FBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBViewController.m; sourceTree = "<group>"; };
-		DC505AC618F0BA9E008229F7 /* FBAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotation.h; sourceTree = "<group>"; };
-		DC505AC718F0BA9E008229F7 /* FBAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,38 +171,12 @@
 		DC505ABC18F0B9C7008229F7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DC505AC518F0BA9E008229F7 /* Models */,
-				DC505ABD18F0B9C7008229F7 /* Application */,
-				DC505AC018F0B9C7008229F7 /* Controllers */,
+				84713F351C6ADAB500D020AC /* FBAppDelegate.h */,
+				84713F341C6ADAB500D020AC /* FBAppDelegate.m */,
+				84713F331C6ADAB500D020AC /* FBViewController.h */,
+				84713F321C6ADAB500D020AC /* FBViewController.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		DC505ABD18F0B9C7008229F7 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				DC505ABE18F0B9C7008229F7 /* FBAppDelegate.h */,
-				DC505ABF18F0B9C7008229F7 /* FBAppDelegate.m */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		DC505AC018F0B9C7008229F7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DC505AC118F0B9C7008229F7 /* FBViewController.h */,
-				DC505AC218F0B9C7008229F7 /* FBViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		DC505AC518F0BA9E008229F7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DC505AC618F0BA9E008229F7 /* FBAnnotation.h */,
-				DC505AC718F0BA9E008229F7 /* FBAnnotation.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,10 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC505AC818F0BA9E008229F7 /* FBAnnotation.m in Sources */,
-				DC505AC318F0B9C7008229F7 /* FBAppDelegate.m in Sources */,
+				84713F361C6ADAB500D020AC /* FBViewController.m in Sources */,
+				84713F371C6ADAB500D020AC /* FBAppDelegate.m in Sources */,
 				DC505A9118F0B505008229F7 /* main.m in Sources */,
-				DC505AC418F0B9C7008229F7 /* FBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +458,7 @@
 				GCC_PREFIX_HEADER = "AnnotationClustering/AnnotationClustering-Prefix.pch";
 				INFOPLIST_FILE = "AnnotationClustering/AnnotationClustering-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.infinum.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bretsko.AnnotationClustering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -504,7 +474,7 @@
 				GCC_PREFIX_HEADER = "AnnotationClustering/AnnotationClustering-Prefix.pch";
 				INFOPLIST_FILE = "AnnotationClustering/AnnotationClustering-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.infinum.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bretsko.AnnotationClustering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -9,7 +9,7 @@
 @import CoreText;
 
 #import "FBAnnotationClusterView.h"
-#import "FBPieSliceLayer.h"
+#import "FBClusterViewSegment.h"
 
 @interface FBAnnotationClusterView ()
 
@@ -22,7 +22,7 @@
 @end
 
 @implementation FBAnnotationClusterView
-
+@dynamic annotation;
 - (id)initWithAnnotation:(FBAnnotationCluster *)annotation
        clusteringManager:(FBClusteringManager *)clusteringManager {
 
@@ -110,17 +110,18 @@
           endAngle = 2 * M_PI * segmentSize.doubleValue;
           previousSegmentAngle = endAngle;
         }
-        FBPieSliceLayer *slice = [FBPieSliceLayer layer];
+        FBClusterViewSegment *slice = [FBClusterViewSegment layer];
 
-        slice.frame = self.bounds;
+        slice.frame = self.frame;
 
         slice.startAngleAnimated = startAngle;
         slice.endAngleAnimated = endAngle;
         slice.segmentSize = segmentSize;
 
         slice.fillColor = color;
-        slice.strokeColor = [_clusteringManager strokeColour];
-        slice.strokeWidth = 1;
+          slice.strokeColor = [UIColor clearColor];
+        //slice.strokeColor = [_clusteringManager strokeColour];
+        //slice.strokeWidth = 0.1;
 
         UIBezierPath *aPath = [UIBezierPath bezierPath];
 
@@ -144,7 +145,7 @@
 
   [textLayer setForegroundColor:[[UIColor blackColor] CGColor]];
 
-  [textLayer setBounds:self.frame];
+  [textLayer setBounds:self.bounds];
   [textLayer setPosition:point];
   [textLayer setString:string];
   [textLayer setName:@"textLayer"];
@@ -178,71 +179,71 @@
 
   _segmentsArray = [NSMutableArray new];
 
-  NSUInteger numOfAnnotationsWithoutRating = 0;
-  NSUInteger numOfAnnotationsWithBadRating = 0;
-  NSUInteger numOfAnnotationsWithNormalRating = 0;
-  NSUInteger numOfAnnotationsWithGoodRating = 0;
-  NSUInteger numOfAnnotationsWithVeryGoodRating = 0;
+  NSUInteger numOfAnnotationsOfTypeA = 0;
+  NSUInteger numOfAnnotationsOfTypeB = 0;
+  NSUInteger numOfAnnotationsOfTypeC = 0;
+  NSUInteger numOfAnnotationsOfTypeD = 0;
+  NSUInteger numOfAnnotationsOfTypeE = 0;
 
-  //  for (FBAnnotation *annotation in self.annotation.annotations) {
-  //
-  //    switch (annotation.ratingForColor) {
-  //
-  //    case noRating:
-  //      numOfAnnotationsWithoutRating++;
-  //      break;
-  //
-  //    case badRating:
-  //      numOfAnnotationsWithBadRating++;
-  //      break;
-  //
-  //    case normalRating:
-  //      numOfAnnotationsWithNormalRating++;
-  //      break;
-  //
-  //    case goodRating:
-  //      numOfAnnotationsWithGoodRating++;
-  //      break;
-  //
-  //    case veryGoodRating:
-  //      numOfAnnotationsWithVeryGoodRating++;
-  //      break;
-  //    }
-  //  }
+    for (FBAnnotationCluster * annotation in self.annotation.annotations) {
+
+        switch (annotation.type){
+
+      case typeA:
+        numOfAnnotationsOfTypeA++;
+        break;
+
+      case typeB:
+        numOfAnnotationsOfTypeB++;
+        break;
+  
+      case typeC:
+        numOfAnnotationsOfTypeC++;
+        break;
+  
+      case typeD:
+        numOfAnnotationsOfTypeD++;
+        break;
+  
+      case typeE:
+        numOfAnnotationsOfTypeE++;
+        break;
+      }
+    }
 
   NSUInteger total =
-      numOfAnnotationsWithoutRating + numOfAnnotationsWithBadRating +
-      numOfAnnotationsWithNormalRating + numOfAnnotationsWithGoodRating +
-      numOfAnnotationsWithVeryGoodRating;
+      numOfAnnotationsOfTypeA + numOfAnnotationsOfTypeB +
+      numOfAnnotationsOfTypeC + numOfAnnotationsOfTypeD +
+      numOfAnnotationsOfTypeE;
 
-  NSNumber *nsNumberOfAnnotationsWithoutRating =
-      [NSNumber numberWithUnsignedInteger:numOfAnnotationsWithoutRating];
+  NSNumber *nsNumberOfAnnotationsOfTypeA =
+      [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeA];
 
-  NSNumber *nsNumberOfAnnotationsWithBadRating =
-      [NSNumber numberWithUnsignedInteger:numOfAnnotationsWithBadRating];
+    NSNumber *nsNumberOfAnnotationsOfTypeB =
+    [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeB];
 
-  NSNumber *nsNumberOfAnnotationsWithNormalRating =
-      [NSNumber numberWithUnsignedInteger:numOfAnnotationsWithNormalRating];
+  NSNumber *nsNumberOfAnnotationsOfTypeC =
+      [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeC];
 
-  NSNumber *nsNumberOfAnnotationsWithGoodRating =
-      [NSNumber numberWithUnsignedInteger:numOfAnnotationsWithGoodRating];
+  NSNumber *nsNumberOfAnnotationsOfTypeD =
+      [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeD];
 
-  NSNumber *nsNumberOfAnnotationsWithVeryGoodRating =
-      [NSNumber numberWithUnsignedInteger:numOfAnnotationsWithVeryGoodRating];
+  NSNumber *nsNumberOfAnnotationsOfTypeE =
+      [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeE];
 
   NSArray *numOfAnnotationsByRating = [[NSArray alloc]
-      initWithObjects:nsNumberOfAnnotationsWithoutRating,
-                      nsNumberOfAnnotationsWithBadRating,
-                      nsNumberOfAnnotationsWithNormalRating,
-                      nsNumberOfAnnotationsWithGoodRating,
-                      nsNumberOfAnnotationsWithVeryGoodRating, nil];
+      initWithObjects:nsNumberOfAnnotationsOfTypeA,
+                      nsNumberOfAnnotationsOfTypeB,
+                      nsNumberOfAnnotationsOfTypeC,
+                      nsNumberOfAnnotationsOfTypeD,
+                      nsNumberOfAnnotationsOfTypeE, nil];
 
   [numOfAnnotationsByRating
       enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 
         NSNumber *numberOfAnnotationsInSegment = (NSNumber *)obj;
 
-        NSNumber *rating = [NSNumber numberWithUnsignedInteger:idx];
+        NSNumber *type = [NSNumber numberWithUnsignedInteger:idx];
 
         double segmentSizeDouble =
             (double)numberOfAnnotationsInSegment.integerValue / total;
@@ -250,7 +251,7 @@
         NSNumber *segmentSize = [NSNumber numberWithFloat:segmentSizeDouble];
 
         NSDictionary *segmentProperties = [[NSDictionary alloc]
-            initWithObjectsAndKeys:rating, @"type", segmentSize, @"size",
+            initWithObjectsAndKeys:type, @"type", segmentSize, @"size",
                                    numberOfAnnotationsInSegment,
                                    @"annotationsCount", @0, @"startAngle", @0,
                                    @"endAngle", nil];

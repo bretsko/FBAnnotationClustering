@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */ = {isa = PBXBuildFile; fileRef = D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */; };
-		230111A9AC22CD3C7169D183 /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */; };
 		2E629529E83423A22A419DB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */; };
 		47BD55B975CAFF97A70BE51F /* FBAnnotationClustering.h in Headers */ = {isa = PBXBuildFile; fileRef = 28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */; };
 		5FDE8333E8C10B25209A11D8 /* FBQuadTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */; };
 		6413CDC32F01E1F63E6AD825 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE902CCBD73FB7E4B787DBAE /* MapKit.framework */; };
 		6E348167BE41ACB4E22CEB92 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 538D2468806BBCF27C2568BA /* Pods-dummy.m */; };
 		83C8E264AE73C0EF54A8E85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF0D4C0F3DF3855FCF0BA1B /* Foundation.framework */; };
-		847237001C6A5C1D00743B4E /* FBPieSliceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 847236F91C6A531000743B4E /* FBPieSliceLayer.m */; };
+		84713F3A1C6ADAC600D020AC /* FBAnnotationCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 84713F381C6ADAC600D020AC /* FBAnnotationCluster.m */; };
+		84713F3B1C6ADAF900D020AC /* FBAnnotationCluster.h in Headers */ = {isa = PBXBuildFile; fileRef = 84713F391C6ADAC600D020AC /* FBAnnotationCluster.h */; };
+		84713F481C6B03C400D020AC /* FBPointAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 84713F461C6B03C400D020AC /* FBPointAnnotation.h */; };
+		84713F491C6B03C400D020AC /* FBPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84713F471C6B03C400D020AC /* FBPointAnnotation.m */; };
+		847237001C6A5C1D00743B4E /* FBClusterViewSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 847236F91C6A531000743B4E /* FBClusterViewSegment.m */; };
 		847237011C6A5C1D00743B4E /* FBAnnotationClusterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847236F61C6A528800743B4E /* FBAnnotationClusterView.m */; };
-		847237021C6A5C2C00743B4E /* FBPieSliceLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 847236FA1C6A531000743B4E /* FBPieSliceLayer.h */; };
+		847237021C6A5C2C00743B4E /* FBClusterViewSegment.h in Headers */ = {isa = PBXBuildFile; fileRef = 847236FA1C6A531000743B4E /* FBClusterViewSegment.h */; };
 		847237031C6A5C2C00743B4E /* FBAnnotationClusterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 847236F71C6A528800743B4E /* FBAnnotationClusterView.h */; };
 		971732DFA55044200E897E38 /* Pods-FBAnnotationClustering-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C281F7F10CDEB5AADDD703AD /* Pods-FBAnnotationClustering-dummy.m */; };
 		B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */; };
@@ -49,10 +51,14 @@
 		68E3E6C81C04657D6EA37223 /* Pods-FBAnnotationClustering-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FBAnnotationClustering-Private.xcconfig"; sourceTree = "<group>"; };
 		71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTreeNode.m; sourceTree = "<group>"; };
 		8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBClusteringManager.m; sourceTree = "<group>"; };
+		84713F381C6ADAC600D020AC /* FBAnnotationCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
+		84713F391C6ADAC600D020AC /* FBAnnotationCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
+		84713F461C6B03C400D020AC /* FBPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBPointAnnotation.h; sourceTree = "<group>"; };
+		84713F471C6B03C400D020AC /* FBPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBPointAnnotation.m; sourceTree = "<group>"; };
 		847236F61C6A528800743B4E /* FBAnnotationClusterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationClusterView.m; sourceTree = "<group>"; };
 		847236F71C6A528800743B4E /* FBAnnotationClusterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBAnnotationClusterView.h; sourceTree = "<group>"; };
-		847236F91C6A531000743B4E /* FBPieSliceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBPieSliceLayer.m; sourceTree = "<group>"; };
-		847236FA1C6A531000743B4E /* FBPieSliceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBPieSliceLayer.h; sourceTree = "<group>"; };
+		847236F91C6A531000743B4E /* FBClusterViewSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBClusterViewSegment.m; sourceTree = "<group>"; };
+		847236FA1C6A531000743B4E /* FBClusterViewSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBClusterViewSegment.h; sourceTree = "<group>"; };
 		85856AC116E120434E928E34 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		89E6BED1730D9A6A051DC7C3 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
 		940D4CA0C8962D6E3E428650 /* FBQuadTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBQuadTree.m; sourceTree = "<group>"; };
@@ -62,8 +68,6 @@
 		C512DDE43244CF21726CE691 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		CE902CCBD73FB7E4B787DBAE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBClusteringManager.h; sourceTree = "<group>"; };
-		D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FBAnnotationCluster.h; sourceTree = "<group>"; };
-		D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FBAnnotationCluster.m; sourceTree = "<group>"; };
 		DB080E6A5CAA3E293DF10FE0 /* libPods-FBAnnotationClustering.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FBAnnotationClustering.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DEEBEDE884C8FC9BC28362 /* Pods-FBAnnotationClustering-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FBAnnotationClustering-prefix.pch"; sourceTree = "<group>"; };
 		FB08F660751CB949061CC00F /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -168,18 +172,20 @@
 			isa = PBXGroup;
 			children = (
 				28E85C02195308E602F0DDBE /* FBAnnotationClustering.h */,
-				D10B19FA16E0F96B32694B37 /* FBAnnotationCluster.h */,
-				D63F24F5273457602FBA67EA /* FBAnnotationCluster.m */,
+				84713F461C6B03C400D020AC /* FBPointAnnotation.h */,
+				84713F471C6B03C400D020AC /* FBPointAnnotation.m */,
+				84713F391C6ADAC600D020AC /* FBAnnotationCluster.h */,
+				84713F381C6ADAC600D020AC /* FBAnnotationCluster.m */,
 				847236F71C6A528800743B4E /* FBAnnotationClusterView.h */,
 				847236F61C6A528800743B4E /* FBAnnotationClusterView.m */,
+				847236FA1C6A531000743B4E /* FBClusterViewSegment.h */,
+				847236F91C6A531000743B4E /* FBClusterViewSegment.m */,
 				CEEB84049BA1AE40C0D26EC2 /* FBClusteringManager.h */,
 				8402DB24A4D2D1CAC3759C6D /* FBClusteringManager.m */,
 				FD66FE75C103B042C69B25C5 /* FBQuadTree.h */,
 				940D4CA0C8962D6E3E428650 /* FBQuadTree.m */,
 				3663C14A8064333943C1A8B0 /* FBQuadTreeNode.h */,
 				71B51B577AFD828E75AFD276 /* FBQuadTreeNode.m */,
-				847236FA1C6A531000743B4E /* FBPieSliceLayer.h */,
-				847236F91C6A531000743B4E /* FBPieSliceLayer.m */,
 			);
 			path = FBAnnotationClustering;
 			sourceTree = "<group>";
@@ -211,13 +217,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84713F3B1C6ADAF900D020AC /* FBAnnotationCluster.h in Headers */,
 				47BD55B975CAFF97A70BE51F /* FBAnnotationClustering.h in Headers */,
 				847237031C6A5C2C00743B4E /* FBAnnotationClusterView.h in Headers */,
-				1F2755EE6457F3ABCB05526C /* FBAnnotationCluster.h in Headers */,
 				B3800966EAF83DC52996D642 /* FBClusteringManager.h in Headers */,
+				84713F481C6B03C400D020AC /* FBPointAnnotation.h in Headers */,
 				C314623E58DEE8CBE26B7337 /* FBQuadTree.h in Headers */,
 				5FDE8333E8C10B25209A11D8 /* FBQuadTreeNode.h in Headers */,
-				847237021C6A5C2C00743B4E /* FBPieSliceLayer.h in Headers */,
+				847237021C6A5C2C00743B4E /* FBClusterViewSegment.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,9 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847237001C6A5C1D00743B4E /* FBPieSliceLayer.m in Sources */,
+				847237001C6A5C1D00743B4E /* FBClusterViewSegment.m in Sources */,
 				847237011C6A5C1D00743B4E /* FBAnnotationClusterView.m in Sources */,
-				230111A9AC22CD3C7169D183 /* FBAnnotationCluster.m in Sources */,
+				84713F491C6B03C400D020AC /* FBPointAnnotation.m in Sources */,
 				BE1A6F2FF38010DFD82F9120 /* FBClusteringManager.m in Sources */,
 				C8A58CB4C4D052E5C9EC745F /* FBQuadTree.m in Sources */,
 				F8439367A557D44B5B7C89BC /* FBQuadTreeNode.m in Sources */,
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E348167BE41ACB4E22CEB92 /* Pods-dummy.m in Sources */,
+				84713F3A1C6ADAC600D020AC /* FBAnnotationCluster.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
