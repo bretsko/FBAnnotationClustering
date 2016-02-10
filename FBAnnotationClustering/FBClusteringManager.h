@@ -32,10 +32,6 @@
 @property(strong, nonatomic) UIColor *typeDColour;
 @property(strong, nonatomic) UIColor *typeEColour;
 
-//@property(assign, nonatomic) CGPoint currentPointOnArc;
-//@property(assign, nonatomic) CGFloat currentPointOnArcX;
-//@property(assign, nonatomic) CGFloat currentPointOnArcY;
-
 @property(assign, nonatomic) NSUInteger clusterAnnotationViewRadius;
 
 @property(assign, nonatomic) NSUInteger labelFontSize;
@@ -47,8 +43,8 @@
 
 @property(strong, nonatomic) NSMutableArray *slicesArray;
 
-- (NSUInteger) clusteringFactor;
-- (void) setClusteringFactor:(NSUInteger)newFactor;
+- (NSUInteger)clusteringFactor;
+- (void)setClusteringFactor:(NSUInteger)newFactor;
 
 - (void)firePieChartAnimation;
 

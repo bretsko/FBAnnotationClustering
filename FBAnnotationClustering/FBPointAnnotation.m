@@ -2,7 +2,7 @@
 //  FBPointAnnotation.m
 //  Pods
 //
-//  Created by Admin on 2/10/16.
+//  Created by Oleksandr Bretsko on 2/10/16.
 //
 //
 

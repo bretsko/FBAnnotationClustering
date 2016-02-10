@@ -119,9 +119,9 @@
         slice.segmentSize = segmentSize;
 
         slice.fillColor = color;
-          slice.strokeColor = [UIColor clearColor];
-        //slice.strokeColor = [_clusteringManager strokeColour];
-        //slice.strokeWidth = 0.1;
+        slice.strokeColor = [UIColor clearColor];
+        // slice.strokeColor = [_clusteringManager strokeColour];
+        // slice.strokeWidth = 0.1;
 
         UIBezierPath *aPath = [UIBezierPath bezierPath];
 
@@ -185,42 +185,41 @@
   NSUInteger numOfAnnotationsOfTypeD = 0;
   NSUInteger numOfAnnotationsOfTypeE = 0;
 
-    for (FBAnnotationCluster * annotation in self.annotation.annotations) {
+  for (FBAnnotationCluster *annotation in self.annotation.annotations) {
 
-        switch (annotation.type){
+    switch (annotation.type) {
 
-      case typeA:
-        numOfAnnotationsOfTypeA++;
-        break;
+    case typeA:
+      numOfAnnotationsOfTypeA++;
+      break;
 
-      case typeB:
-        numOfAnnotationsOfTypeB++;
-        break;
-  
-      case typeC:
-        numOfAnnotationsOfTypeC++;
-        break;
-  
-      case typeD:
-        numOfAnnotationsOfTypeD++;
-        break;
-  
-      case typeE:
-        numOfAnnotationsOfTypeE++;
-        break;
-      }
+    case typeB:
+      numOfAnnotationsOfTypeB++;
+      break;
+
+    case typeC:
+      numOfAnnotationsOfTypeC++;
+      break;
+
+    case typeD:
+      numOfAnnotationsOfTypeD++;
+      break;
+
+    case typeE:
+      numOfAnnotationsOfTypeE++;
+      break;
     }
+  }
 
-  NSUInteger total =
-      numOfAnnotationsOfTypeA + numOfAnnotationsOfTypeB +
-      numOfAnnotationsOfTypeC + numOfAnnotationsOfTypeD +
-      numOfAnnotationsOfTypeE;
+  NSUInteger total = numOfAnnotationsOfTypeA + numOfAnnotationsOfTypeB +
+                     numOfAnnotationsOfTypeC + numOfAnnotationsOfTypeD +
+                     numOfAnnotationsOfTypeE;
 
   NSNumber *nsNumberOfAnnotationsOfTypeA =
       [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeA];
 
-    NSNumber *nsNumberOfAnnotationsOfTypeB =
-    [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeB];
+  NSNumber *nsNumberOfAnnotationsOfTypeB =
+      [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeB];
 
   NSNumber *nsNumberOfAnnotationsOfTypeC =
       [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeC];
@@ -231,12 +230,12 @@
   NSNumber *nsNumberOfAnnotationsOfTypeE =
       [NSNumber numberWithUnsignedInteger:numOfAnnotationsOfTypeE];
 
-  NSArray *numOfAnnotationsByRating = [[NSArray alloc]
-      initWithObjects:nsNumberOfAnnotationsOfTypeA,
-                      nsNumberOfAnnotationsOfTypeB,
-                      nsNumberOfAnnotationsOfTypeC,
-                      nsNumberOfAnnotationsOfTypeD,
-                      nsNumberOfAnnotationsOfTypeE, nil];
+  NSArray *numOfAnnotationsByRating =
+      [[NSArray alloc] initWithObjects:nsNumberOfAnnotationsOfTypeA,
+                                       nsNumberOfAnnotationsOfTypeB,
+                                       nsNumberOfAnnotationsOfTypeC,
+                                       nsNumberOfAnnotationsOfTypeD,
+                                       nsNumberOfAnnotationsOfTypeE, nil];
 
   [numOfAnnotationsByRating
       enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

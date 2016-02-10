@@ -12,7 +12,6 @@
 
 @property(nonatomic, assign) CGFloat startAngle;
 @property(nonatomic, assign) CGFloat endAngle;
-
 @property(nonatomic, assign) CGFloat startAngleAnimated;
 @property(nonatomic, assign) CGFloat endAngleAnimated;
 

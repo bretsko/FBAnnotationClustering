@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Infinum Ltd. All rights reserved.
 //
 
-#import "FBClusteringManager.h"
 #import "FBClusterViewSegment.h"
+#import "FBClusteringManager.h"
 #import "FBPointAnnotation.h"
 #import "FBQuadTree.h"
 
@@ -68,7 +68,6 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 
     self.scale = [[NSNumber alloc] initWithDouble:1];
 
-    //clusteringFactor = 15;
     _labelFontSize = clusteringFactor * 1.3;
     _clusterAnnotationViewRadius = clusteringFactor * 3;
 
@@ -97,12 +96,12 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
   return self;
 }
 
-- (NSUInteger) clusteringFactor{
-    return clusteringFactor;
+- (NSUInteger)clusteringFactor {
+  return clusteringFactor;
 }
 
-- (void) setClusteringFactor:(NSUInteger)newFactor{
-    clusteringFactor = newFactor;
+- (void)setClusteringFactor:(NSUInteger)newFactor {
+  clusteringFactor = newFactor;
 }
 
 - (void)setAnnotations:(NSArray *)annotations {
@@ -136,23 +135,6 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 
 - (NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect
                                  withZoomScale:(double)zoomScale {
-
-//  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//  switch ([userDefaults integerForKey:kSettingsClustering]) {
-//  case 0: {
-//    _clusteringFactor = 5;
-//  } break;
-//  case 1: {
-//    _clusteringFactor = 10;
-//  } break;
-//  case 2: {
-//    _clusteringFactor = 25;
-//  } break;
-//
-//  default:
-//    _clusteringFactor = 15;
-//    break;
-//  }
 
   return [self clusteredAnnotationsWithinMapRect:rect
                                    withZoomScale:zoomScale

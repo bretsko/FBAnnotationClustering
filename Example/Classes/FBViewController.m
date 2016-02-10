@@ -16,28 +16,21 @@
 
 @property(weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(weak, nonatomic) IBOutlet UILabel *numberOfAnnotationsLabel;
-
 @property(nonatomic, assign) NSUInteger numberOfLocations;
 @property(nonatomic, strong) FBClusteringManager *clusteringManager;
-
-//@property(strong, nonatomic) CLLocationManager *locationManager;
-
-//@property(weak, nonatomic) MKAnnotationView *annotationView;
-//@property(strong, nonatomic) NSMutableArray *clusteredAnnotations;
 @property(strong, nonatomic) NSMutableArray *annotationsArray;
+
 @end
 
 @implementation FBViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
 
   self.annotationsArray = [self randomLocationsWithCount:kNUMBER_OF_LOCATIONS];
   self.numberOfLocations = kNUMBER_OF_LOCATIONS;
   [self updateLabelText];
 
-  // Create clustering manager
   self.clusteringManager =
       [[FBClusteringManager alloc] initWithAnnotations:self.annotationsArray];
   self.clusteringManager.delegate = self;
@@ -45,61 +38,12 @@
   self.mapView.centerCoordinate = CLLocationCoordinate2DMake(0, 0);
 
   [self reloadClusteringAnimated:YES];
-
-  //[self mapView:self.mapView regionDidChangeAnimated:NO];
-
-  //  NSMutableArray *annotationsToRemove = [[NSMutableArray alloc] init];
-  //  for (int i = 0; i < kFIRST_LOCATIONS_TO_REMOVE; i++) {
-  //    [annotationsToRemove addObject:array[i]];
-  //  }
-  //  [self.clusteringManager removeAnnotations:annotationsToRemove];
 }
-- (IBAction)ClusterScalingSlider:(UISlider *)sender {
-  //[FBClusteringManager setClusteringFactor:[sender value]];
-  [self.clusteringManager setClusteringFactor:[sender value]];
 
-  //    self.clusteringManager =
-  //    [[FBClusteringManager alloc] initWithAnnotations:self.annotationsArray];
+- (IBAction)ClusterScalingSlider:(UISlider *)sender {
+  [self.clusteringManager setClusteringFactor:[sender value]];
   [self reloadClusteringAnimated:NO];
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//  [super viewWillAppear:animated];
-
-//   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    self.ratingOfPoints = [userDefaults integerForKey:kSettingsRating];
-//    self.pointHasComments = [userDefaults boolForKey:kSettingsComments];
-//    self.pointHasDescription = [userDefaults boolForKey:kSettingsComments];
-// [self.mapView removeAnnotations:self.mapView.annotations];
-// [self printPointWithContinent];
-
-// NSLog(@" Points in map array %lu", (unsigned long)[self.mapPointArray
-// count]);
-// NSLog(@" point has comments %@", self.pointHasComments ? @"Yes" : @"No");
-
-// [[self navigationController] setNavigationBarHidden:YES animated:YES];
-
-//  if (!self.clusteringManager) {
-//
-//    [[NSOperationQueue new] addOperationWithBlock:^{
-//      double scale =
-//          _mapView.bounds.size.width / self.mapView.visibleMapRect.size.width;
-//      self.clusteringManager = [[FBClusteringManager alloc]
-//          initWithAnnotations:_clusteredAnnotations];
-//
-//      self.clusteringManager.scale = [[NSNumber alloc] initWithDouble:1.6];
-//
-//      NSArray *annotations = [self.clusteringManager
-//          clusteredAnnotationsWithinMapRect:_mapView.visibleMapRect
-//                              withZoomScale:scale];
-//      [self.clusteringManager displayAnnotations:annotations
-//                                       onMapView:_mapView];
-//    }];
-//  } else {
-//
-//    [self reloadClusteringAnimated:NO];
-//  }
-//}
 
 #pragma mark - Utility
 
@@ -109,10 +53,7 @@
 
   self.numberOfLocations += kNUMBER_OF_LOCATIONS;
   [self updateLabelText];
-
   [self reloadClusteringAnimated:NO];
-  // Update annotations on the map
-  // [self mapView:self.mapView regionDidChangeAnimated:NO];
 }
 
 - (NSMutableArray *)randomLocationsWithCount:(NSUInteger)count {
@@ -200,12 +141,6 @@
     double scale =
         _mapView.bounds.size.width / self.mapView.visibleMapRect.size.width;
 
-         // self.numberOfLocations += kNUMBER_OF_LOCATIONS;
-//    self.annotationsArray =
-//        [self randomLocationsWithCount:kNUMBER_OF_LOCATIONS];
-//
-//      self.numberOfLocations = self.annotationsArray.count;
-//      [self updateLabelText];
     if (animated) {
       for (id<MKAnnotation> annotation in self.annotationsArray) {
         if ([annotation isMemberOfClass:[FBAnnotationCluster class]]) {
@@ -216,34 +151,15 @@
       }
     }
 
-   // [self.clusteringManager addAnnotations:self.annotationsArray];
+    NSArray *annotations = [self.clusteringManager
+        clusteredAnnotationsWithinMapRect:_mapView.visibleMapRect
+                            withZoomScale:scale];
 
-     //[self mapView:self.mapView regionDidChangeAnimated:NO];
-//[self.mapView addAnnotations:<#(nonnull NSArray<id<MKAnnotation>> *)#>
-
-
-
-        NSArray *annotations = [self.clusteringManager
-      clusteredAnnotationsWithinMapRect:_mapView.visibleMapRect
-                       withZoomScale:scale];
-
-     [self.clusteringManager displayAnnotations:annotations
-     onMapView:_mapView];
+    [self.clusteringManager displayAnnotations:annotations onMapView:_mapView];
   }];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-  //  [[NSOperationQueue new] addOperationWithBlock:^{
-  //    double scale =
-  //        self.mapView.bounds.size.width /
-  //        self.mapView.visibleMapRect.size.width;
-  //    NSArray *annotations = [self.clusteringManager
-  //        clusteredAnnotationsWithinMapRect:mapView.visibleMapRect
-  //                            withZoomScale:scale];
-  //
-  //    [self.clusteringManager displayAnnotations:annotations
-  //    onMapView:mapView];
-  //  }];
   [self reloadClusteringAnimated:animated];
 }
 
@@ -253,28 +169,6 @@
 
   MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView
       dequeueReusableAnnotationViewWithIdentifier:AnnotatioViewReuseID];
-
-  //          if ([annotation isKindOfClass:[MKUserLocation class]]) {
-  //
-  //              NSString *identifier = @"UserAnnotation";
-  //
-  //              MKAnnotationView *pin = (MKAnnotationView *)
-  //              [mapView
-  //              dequeueReusableAnnotationViewWithIdentifier:identifier];
-  //              if (!pin) {
-  //
-  //                  pin = [[MKAnnotationView alloc]
-  //                  initWithAnnotation:annotation
-  //                                                     reuseIdentifier:identifier];
-  //
-  //                  pin.canShowCallout = YES;
-  //              } else {
-  //                  pin.annotation = annotation;
-  //              }
-  //
-  //             // self.userLocationPin = pin;
-  //              return pin;
-  //          } else if
 
   if ([annotation isMemberOfClass:[FBAnnotationCluster class]]) {
     FBAnnotationCluster *clusterAnnotation = (FBAnnotationCluster *)annotation;
@@ -286,9 +180,6 @@
     return clusterAnnotationView;
 
   } else if (!annotationView) {
-    //          annotationView =
-    //          [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-    //                                          reuseIdentifier:AnnotatioViewReuseID];
 
     FBPointAnnotation *pointAnnotation = (FBPointAnnotation *)annotation;
     annotationView =

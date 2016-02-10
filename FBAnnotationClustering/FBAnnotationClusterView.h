@@ -13,17 +13,12 @@
 
 @interface FBAnnotationClusterView : MKAnnotationView
 
-// #pragma clang diagnostic push
-// #pragma clang diagnostic ignored "-Wobjc-property-synthesis"
 @property(nonatomic) FBAnnotationCluster *annotation;
-//#pragma clang diagnostic pop
-
 @property(nonatomic, strong) FBClusteringManager *clusteringManager;
+@property(nonatomic, strong) NSString *key;
+@property(nonatomic, strong) CATextLayer *textLayer;
 
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation
        clusteringManager:(FBClusteringManager *)clusteringManager;
-
-@property(nonatomic, strong) NSString *key;
-@property(nonatomic, strong) CATextLayer *textLayer;
 
 @end

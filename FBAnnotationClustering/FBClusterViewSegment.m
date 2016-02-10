@@ -6,8 +6,8 @@
 //  Copyright © 2015 SS. All rights reserved.
 //
 
-#import "FBClusteringManager.h"
 #import "FBClusterViewSegment.h"
+#import "FBClusteringManager.h"
 
 @implementation FBClusterViewSegment
 
