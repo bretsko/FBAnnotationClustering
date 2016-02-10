@@ -66,7 +66,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
   if (self) {
     _lock = [NSRecursiveLock new];
 
-    self.scale = [[NSNumber alloc] initWithDouble:1];
+    self.scale = [[NSNumber alloc] initWithDouble:0.5];
 
     _labelFontSize = clusteringFactor * 1.3;
     _clusterAnnotationViewRadius = clusteringFactor * 3;

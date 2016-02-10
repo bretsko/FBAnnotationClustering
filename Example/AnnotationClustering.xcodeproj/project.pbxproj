@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,7 @@
 		DC505A8918F0B505008229F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505A8818F0B505008229F7 /* UIKit.framework */; };
 		DC505A8F18F0B505008229F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC505A8D18F0B505008229F7 /* InfoPlist.strings */; };
 		DC505A9118F0B505008229F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC505A9018F0B505008229F7 /* main.m */; };
-		DC505A9818F0B505008229F7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC505A9618F0B505008229F7 /* Main_iPhone.storyboard */; };
-		DC505A9B18F0B505008229F7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC505A9918F0B505008229F7 /* Main_iPad.storyboard */; };
+		DC505A9818F0B505008229F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC505A9618F0B505008229F7 /* Main.storyboard */; };
 		DC505AA018F0B505008229F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC505A9F18F0B505008229F7 /* Images.xcassets */; };
 		DC505AA718F0B505008229F7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505AA618F0B505008229F7 /* XCTest.framework */; };
 		DC505AA818F0B505008229F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC505A8418F0B505008229F7 /* Foundation.framework */; };
@@ -51,8 +50,7 @@
 		DC505A8E18F0B505008229F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC505A9018F0B505008229F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC505A9218F0B505008229F7 /* AnnotationClustering-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnnotationClustering-Prefix.pch"; sourceTree = "<group>"; };
-		DC505A9718F0B505008229F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		DC505A9A18F0B505008229F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		DC505A9718F0B505008229F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC505A9F18F0B505008229F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC505AA518F0B505008229F7 /* AnnotationClusteringTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnnotationClusteringTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC505AA618F0B505008229F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -98,8 +96,7 @@
 		DC505A7818F0B505008229F7 = {
 			isa = PBXGroup;
 			children = (
-				DC505A9618F0B505008229F7 /* Main_iPhone.storyboard */,
-				DC505A9918F0B505008229F7 /* Main_iPad.storyboard */,
+				DC505A9618F0B505008229F7 /* Main.storyboard */,
 				DC505ABC18F0B9C7008229F7 /* Classes */,
 				DC505A8A18F0B505008229F7 /* AnnotationClustering */,
 				DC505AAC18F0B505008229F7 /* AnnotationClusteringTests */,
@@ -225,9 +222,9 @@
 		DC505A7918F0B505008229F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FB;
+				CLASSPREFIX = OB;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Infinum Ltd.";
+				ORGANIZATIONNAME = "Oleksandr Bretsko";
 				TargetAttributes = {
 					DC505AA418F0B505008229F7 = {
 						TestTargetID = DC505A8018F0B505008229F7;
@@ -235,7 +232,7 @@
 				};
 			};
 			buildConfigurationList = DC505A7C18F0B505008229F7 /* Build configuration list for PBXProject "AnnotationClustering" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -258,9 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC505A9B18F0B505008229F7 /* Main_iPad.storyboard in Resources */,
 				DC505AA018F0B505008229F7 /* Images.xcassets in Resources */,
-				DC505A9818F0B505008229F7 /* Main_iPhone.storyboard in Resources */,
+				DC505A9818F0B505008229F7 /* Main.storyboard in Resources */,
 				DC505A8F18F0B505008229F7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,21 +342,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DC505A9618F0B505008229F7 /* Main_iPhone.storyboard */ = {
+		DC505A9618F0B505008229F7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DC505A9718F0B505008229F7 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			path = AnnotationClustering;
-			sourceTree = "<group>";
-		};
-		DC505A9918F0B505008229F7 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC505A9A18F0B505008229F7 /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			path = AnnotationClustering;
 			sourceTree = "<group>";
 		};
@@ -452,8 +439,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 07747994D3D1DB6F5D31E65D /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnnotationClustering/AnnotationClustering-Prefix.pch";
 				INFOPLIST_FILE = "AnnotationClustering/AnnotationClustering-Info.plist";
@@ -468,8 +453,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AD84D55ACD714A4191C3DDAF /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnnotationClustering/AnnotationClustering-Prefix.pch";
 				INFOPLIST_FILE = "AnnotationClustering/AnnotationClustering-Info.plist";

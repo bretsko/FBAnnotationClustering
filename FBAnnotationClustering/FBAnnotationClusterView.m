@@ -337,7 +337,7 @@
                        endAngle:endAngle
                       clockwise:YES];
 
-        [aPath setLineWidth:3];
+        [aPath setLineWidth:1];
         [aPath closePath];
         [color setFill];
         [[_clusteringManager strokeColour] setStroke];

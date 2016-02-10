@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,35 +17,49 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K86-hM-ZLJ">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="5Rf-Df-6Fy"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-Tt-diF">
-                                <rect key="frame" x="104" y="518" width="112" height="30"/>
+                                <rect key="frame" x="210" y="550" width="181" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Lp-Tt-diF" secondAttribute="height" multiplier="7:1" id="lR0-Qh-3iA"/>
+                                </constraints>
                                 <state key="normal" title="Add annotations">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lR0-Qh-3iA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <mask key="constraints">
+                                        <include reference="lR0-Qh-3iA"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="addNewAnnotations:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dMp-CF-9Mq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ed-bg-etR">
-                                <rect key="frame" x="139" y="487" width="42" height="21"/>
+                                <rect key="frame" x="279" y="510" width="42" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Kd-YyY">
-                                <rect key="frame" x="202" y="28" width="100" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="96" id="qbh-Wv-VMm"/>
-                                </constraints>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Kd-YyY">
+                                <rect key="frame" x="392" y="28" width="184" height="31"/>
                                 <connections>
                                     <action selector="ClusterScalingSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="8nL-EG-TKc"/>
                                 </connections>
@@ -51,16 +67,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7Ed-bg-etR" firstAttribute="height" secondItem="6Lp-Tt-diF" secondAttribute="height" id="1bu-hu-fz7"/>
                             <constraint firstItem="7Ed-bg-etR" firstAttribute="centerX" secondItem="6Lp-Tt-diF" secondAttribute="centerX" id="4Ln-BP-IrL"/>
                             <constraint firstItem="K86-hM-ZLJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CXS-ww-1cn"/>
                             <constraint firstItem="MKf-Kd-YyY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="EMR-Wm-y88"/>
                             <constraint firstItem="6Lp-Tt-diF" firstAttribute="top" secondItem="7Ed-bg-etR" secondAttribute="bottom" constant="10" id="G2w-6R-JIF"/>
                             <constraint firstItem="K86-hM-ZLJ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="GmL-R7-4yd"/>
+                            <constraint firstItem="6Lp-Tt-diF" firstAttribute="width" secondItem="K86-hM-ZLJ" secondAttribute="width" multiplier="0.3" constant="1" id="JMc-2e-erj"/>
                             <constraint firstAttribute="trailing" secondItem="K86-hM-ZLJ" secondAttribute="trailing" id="McV-Ix-ZPY"/>
                             <constraint firstItem="K86-hM-ZLJ" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Q9k-6N-JNk"/>
                             <constraint firstAttribute="bottom" secondItem="6Lp-Tt-diF" secondAttribute="bottom" constant="20" symbolic="YES" id="eYj-o3-R6p"/>
                             <constraint firstItem="6Lp-Tt-diF" firstAttribute="centerX" secondItem="K86-hM-ZLJ" secondAttribute="centerX" id="rbM-wK-rp3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MKf-Kd-YyY" secondAttribute="trailing" constant="6" id="u3r-FY-O9h"/>
+                            <constraint firstItem="MKf-Kd-YyY" firstAttribute="width" secondItem="K86-hM-ZLJ" secondAttribute="width" multiplier="0.3" id="yLk-w3-nIa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -70,6 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="746.25" y="318.4859154929577"/>
         </scene>
     </scenes>
 </document>
