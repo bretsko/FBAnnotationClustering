@@ -32,7 +32,7 @@
   [self updateLabelText];
 
   self.clusteringManager =
-      [[FBClusteringManager alloc] initWithAnnotations:self.annotationsArray];
+      [[FBClusteringManager alloc] initWithAnnotations:self.annotationsArray andClusteringFactor:15];
   self.clusteringManager.delegate = self;
 
   self.mapView.centerCoordinate = CLLocationCoordinate2DMake(0, 0);
@@ -42,7 +42,14 @@
 
 - (IBAction)ClusterScalingSlider:(UISlider *)sender {
   [self.clusteringManager setClusteringFactor:[sender value]];
-  [self reloadClusteringAnimated:NO];
+
+    self.clusteringManager =
+    [[FBClusteringManager alloc] initWithAnnotations:self.annotationsArray andClusteringFactor:[sender value]];
+    self.clusteringManager.delegate = self;
+
+    [self reloadClusteringAnimated:YES];
+    //[self reloadClusteringAnimated:NO];
+  //   [self.mapView reloadInputViews];
 }
 
 #pragma mark - Utility

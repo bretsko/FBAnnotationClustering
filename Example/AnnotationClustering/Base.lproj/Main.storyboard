@@ -58,8 +58,8 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 </variation>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Kd-YyY">
-                                <rect key="frame" x="392" y="28" width="184" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="55" minValue="40" maxValue="70" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-Kd-YyY">
+                                <rect key="frame" x="391" y="28" width="184" height="31"/>
                                 <connections>
                                     <action selector="ClusterScalingSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="8nL-EG-TKc"/>
                                 </connections>

@@ -48,7 +48,8 @@
 
 - (void)firePieChartAnimation;
 
-- (id)initWithAnnotations:(NSArray *)annotations;
+
+- (id)initWithAnnotations:(NSArray *)annotations andClusteringFactor:(NSUInteger)clusteringFactor;
 
 - (void)setAnnotations:(NSArray *)annotations;
 

@@ -15,7 +15,7 @@ static NSString *const kFBClusteringManagerLockName =
     @"co.infinum.clusteringLock";
 static NSString *kSettingsRating = @"type";
 static NSString *kSettingsClustering = @"clustering";
-static NSUInteger clusteringFactor = 15;
+static NSUInteger clusteringFactor = 55;
 #pragma mark - Utility functions
 
 NSInteger FBZoomScaleToZoomLevel(MKZoomScale scale) {
@@ -58,18 +58,19 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
 @implementation FBClusteringManager
 
 - (id)init {
-  return [self initWithAnnotations:nil];
+  return [self initWithAnnotations:nil andClusteringFactor:NULL];
 }
 
-- (id)initWithAnnotations:(NSArray *)annotations {
+- (id)initWithAnnotations:(NSArray *)annotations andClusteringFactor:(NSUInteger)newClusteringFactor{
   self = [super init];
   if (self) {
     _lock = [NSRecursiveLock new];
 
-    self.scale = [[NSNumber alloc] initWithDouble:0.5];
+    self.scale = [[NSNumber alloc] initWithDouble:clusteringFactor / 15 ];
+    clusteringFactor = newClusteringFactor;
+      _labelFontSize = clusteringFactor;
 
-    _labelFontSize = clusteringFactor * 1.3;
-    _clusterAnnotationViewRadius = clusteringFactor * 3;
+      _clusterAnnotationViewRadius = 3*clusteringFactor ;
 
     _numOfInitializedAnnotationViews = 0;
     _slicesArray = [NSMutableArray new];
@@ -95,6 +96,9 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
   }
   return self;
 }
+
+//- (id)initWithAnnotations:(NSArray *)annotations andClusteringFactor:(NSUInteger)clusteringFactor{
+//}
 
 - (NSUInteger)clusteringFactor {
   return clusteringFactor;
@@ -152,7 +156,7 @@ CGFloat FBCellSizeForZoomScale(MKZoomScale zoomScale) {
   }
 
   double scale = [self.scale doubleValue];
-  double scaleFactor = zoomScale / cellSize / scale;
+  double scaleFactor = zoomScale / cellSize / scale ;
 
   NSInteger minX = floor(MKMapRectGetMinX(rect) * scaleFactor);
   NSInteger maxX = floor(MKMapRectGetMaxX(rect) * scaleFactor);

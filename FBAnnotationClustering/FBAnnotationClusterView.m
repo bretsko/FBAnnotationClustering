@@ -141,7 +141,7 @@
 - (CATextLayer *)constructTextLayerAtPoint:(CGPoint)point
                                 WithString:(NSString *)string {
   CATextLayer *textLayer = [CATextLayer layer];
-  [textLayer setFontSize:12];
+  [textLayer setFontSize:_clusteringManager.labelFontSize];
 
   [textLayer setForegroundColor:[[UIColor blackColor] CGColor]];
 
